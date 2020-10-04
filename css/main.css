@@ -588,6 +588,7 @@ input[class^="btn-"]:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: .3s ease;
 }
 
 #header .menu-wrapper .menu .sidebar > ul > li > div label > span > div::before, #header .menu-wrapper .menu .sidebar > ul > li > div label > span > div::after {
@@ -603,6 +604,10 @@ input[class^="btn-"]:hover {
 
 #header .menu-wrapper .menu .sidebar > ul > li > div label > span > div::after {
   transform: rotate(90deg);
+}
+
+#header .menu-wrapper .menu .sidebar > ul > li > div:hover {
+  background: #197c3a;
 }
 
 #header .menu-wrapper .menu .sidebar > ul > li > ul {
@@ -639,10 +644,12 @@ input[class^="btn-"]:hover {
 
 #header .menu-wrapper .menu .sidebar > ul > li > ul > li {
   border-left: 4px solid transparent;
+  display: block;
 }
 
 #header .menu-wrapper .menu .sidebar > ul > li > ul > li:hover {
   border-left: 4px solid #fff;
+  background: #434343;
 }
 
 #header .menu-wrapper .socials {
