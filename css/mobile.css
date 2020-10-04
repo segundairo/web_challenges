@@ -7,52 +7,42 @@
 }
 
 #home-a .container .specials {
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
 }
 
 #home-b .stats {
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
 }
 
 #home-c .container .process {
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
 }
 
 #about-a .container .about-me {
-      grid-template-areas: "pro-img" "bio" "aw1" "aw2" "aw3";
+  grid-template-areas: "pro-img" "bio" "aw1" "aw2" "aw3";
 }
 
 #about-a .container .about-me .profile-content {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
   grid-area: bio;
   border-right: 3px solid #197c3a;
   padding: 2rem;
 }
 
 #about-c .container .about-logos {
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 3rem;
 }
 
 #about-d .container .testimonials {
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
 }
 
 #about-d .container .testimonials ul {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 #contact-a .container form {
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
 }
 
 #contact-a .container form > div:nth-child(5),
@@ -65,8 +55,7 @@
 }
 
 #contact-b .container {
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
+  grid-template-columns: 1fr;
 }
 
 #contact-b .container ul:nth-child(2) {
@@ -76,10 +65,7 @@
 
 @media (max-width: 500px) {
   .navbar {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
   .navbar ul li {
     padding: 2rem 2rem 0;
@@ -95,16 +81,9 @@
     height: 120px;
   }
   #main-footer .footer-content {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
     height: 100%;
     padding: .3rem;
   }
