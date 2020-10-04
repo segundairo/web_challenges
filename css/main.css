@@ -419,12 +419,7 @@ input[class^="btn-"]:hover {
 }
 
 #header .menu-wrapper .toggler:checked ~ .menu {
-  visibility: visible;
-}
-
-#header .menu-wrapper .toggler:checked ~ .menu > div {
   transform: translateY(0);
-  transition: all 0.8s ease-in-out;
 }
 
 #header .menu-wrapper .burger {
@@ -474,47 +469,39 @@ input[class^="btn-"]:hover {
   position: fixed;
   top: 0;
   left: 0;
-  max-height: 100vh;
-  width: 100vw;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  visibility: hidden;
-}
-
-#header .menu-wrapper .menu > div {
-  display: flex;
+  justify-content: flex-start;
+  font-family: "Muli";
   max-height: 100vh;
-  width: 100vw;
-  transform: translateY(-100vh);
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  flex: none;
-  background: rgba(0, 51, 17, 0.85);
-  transition: all 0.7s ease-in-out;
+  height: 100%;
+  width: 350px;
+  background: #222;
+  z-index: 2;
+  transition: all 0.6s ease-in-out;
+  transform: translateX(-100%);
   overflow-y: auto;
 }
 
-#header .menu-wrapper .menu > div > div {
-  display: flex;
-  max-height: 100vh;
-  width: 100vw;
-  justify-content: space-evenly;
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-  color: #fff;
+#header .menu-wrapper .menu::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #333;
 }
 
-#header .menu-wrapper .menu > div > div .logoBx {
-  height: 120px;
-  width: 120px;
+#header .menu-wrapper .menu .logoBx {
+  margin: 10rem 0;
+  height: 60px;
+  width: 60px;
   background: #fff;
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-#header .menu-wrapper .menu > div > div .logoBx img {
+#header .menu-wrapper .menu .logoBx img {
   object-fit: cover;
   display: block;
   height: 100%;
@@ -523,38 +510,157 @@ input[class^="btn-"]:hover {
   transition: all 0.4s ease-in-out;
 }
 
-#header .menu-wrapper .menu > div > div .logoBx img:hover {
+#header .menu-wrapper .menu .logoBx img:hover {
   color: #031;
   font-weight: 700;
-  transform: scale(1.1);
 }
 
-#header .menu-wrapper .menu > div > div .socials i {
-  padding: 1rem;
+#header .menu-wrapper .menu .sidebar {
+  width: 100%;
+  margin-top: 2rem;
 }
 
-#header .menu-wrapper .menu > div > div .socials i:hover {
-  color: #c31;
-  font-weight: 700;
-  transform: scale(1.1);
-}
-
-#header .menu-wrapper .menu > div > div ul li {
-  padding: 0.5rem;
-}
-
-#header .menu-wrapper .menu > div > div ul li a {
-  font-size: 2.5rem;
+#header .menu-wrapper .menu .sidebar a,
+#header .menu-wrapper .menu .sidebar label {
   color: #fff;
+  font-size: 1.6rem;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  transition: all 0.4s;
+  letter-spacing: 2px;
 }
 
-#header .menu-wrapper .menu > div > div ul li a:hover {
+#header .menu-wrapper .menu .sidebar input[type="checkbox"] {
+  display: none;
+}
+
+#header .menu-wrapper .menu .sidebar input[type="checkbox"]:checked + div + ul {
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.5s ease;
+}
+
+#header .menu-wrapper .menu .sidebar input[type="checkbox"]:checked + div > label > span > div:after {
+  transform: rotate(0deg);
+}
+
+#header .menu-wrapper .menu .sidebar input[type="checkbox"]:checked + div > label > span > div:before {
+  transform: rotate(-180deg);
+}
+
+#header .menu-wrapper .menu .sidebar > ul > li {
+  width: 100%;
+}
+
+#header .menu-wrapper .menu .sidebar > ul > li > a {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  padding: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 4px solid transparent;
+}
+
+#header .menu-wrapper .menu .sidebar > ul > li > a:hover {
+  border-left: 4px solid #197c3a;
+}
+
+#header .menu-wrapper .menu .sidebar > ul > li > div label {
+  display: grid;
+  grid-template-columns: 30px 1fr 20px;
+  place-content: center;
+  padding: 1rem;
+  padding-right: 2.5rem;
+  cursor: pointer;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#header .menu-wrapper .menu .sidebar > ul > li > div label > span {
+  height: 25px;
+  width: 25px;
+  padding: 5px;
+}
+
+#header .menu-wrapper .menu .sidebar > ul > li > div label > span > div {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#header .menu-wrapper .menu .sidebar > ul > li > div label > span > div::before, #header .menu-wrapper .menu .sidebar > ul > li > div label > span > div::after {
+  height: 3px;
+  width: 100%;
+  position: absolute;
+  content: "";
+  background: white;
+  top: 50%;
+  left: 0;
+  transition: 0.5s ease;
+}
+
+#header .menu-wrapper .menu .sidebar > ul > li > div label > span > div::after {
+  transform: rotate(90deg);
+}
+
+#header .menu-wrapper .menu .sidebar > ul > li > ul {
+  width: 100%;
+  display: block;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#header .menu-wrapper .menu .sidebar > ul > li > ul > li {
+  width: 100%;
+  display: block;
+  padding: 0.75rem 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#header .menu-wrapper .menu .sidebar > ul > li > div {
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+#header .menu-wrapper .menu .sidebar > ul > li > div:hover {
+  border-left: 4px solid #197c3a;
+}
+
+#header .menu-wrapper .menu .sidebar > ul > li > ul > li > a,
+#header .menu-wrapper .menu .sidebar > ul > li > ul > li {
+  background: #333;
+  font-size: 1.2rem;
+  padding-left: 1.4rem;
+}
+
+#header .menu-wrapper .menu .sidebar > ul > li > ul > li {
+  border-left: 4px solid transparent;
+}
+
+#header .menu-wrapper .menu .sidebar > ul > li > ul > li:hover {
+  border-left: 4px solid #fff;
+}
+
+#header .menu-wrapper .socials {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#header .menu-wrapper .socials i + i {
+  margin-left: 2rem;
+}
+
+#header .menu-wrapper .socials > i:hover {
   color: #c31;
   font-weight: 700;
-  transform: scale(1.1);
 }
 
 #header .showcase {
