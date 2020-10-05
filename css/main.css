@@ -428,7 +428,7 @@ input[class^="btn-"]:hover {
   right: 20px;
   height: 60px;
   width: 60px;
-  background: rgba(0, 51, 17, 0.85);
+  background: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -439,12 +439,24 @@ input[class^="btn-"]:hover {
   transition: all 0.4s ease-in-out;
 }
 
+#header .menu-wrapper .burger:after {
+  position: absolute;
+  content: '';
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background: inherit;
+  filter: blur(4px);
+}
+
 #header .menu-wrapper .burger > div {
   position: relative;
   top: 0;
   left: 0;
   height: 3px;
   background: #fff;
+  background: #000;
   width: 100%;
   z-index: 1;
 }
